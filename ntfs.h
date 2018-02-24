@@ -164,7 +164,7 @@ typedef struct {
 	ULONG ReparseValue;							// 用于EAS和重点解析
 	UCHAR NameLength;							// 以字符计的文件名长度，每个字符占用的字节数由命名空间决定
 	UCHAR NameType; 							// 文件名的命名空间0x0  WIN32 0x01  DOS 0x02  WIN32&DOS 0x3   
-//	WCHAR Name[1]; // 这部分是UNICODE方式表示的文件名，长度通常为2*NameLength。
+	WCHAR Name[];								// 这部分是UNICODE方式表示的文件名，长度通常为2*NameLength。
 } FILENAME_ATTRIBUTE, *PFILENAME_ATTRIBUTE;
 
 
